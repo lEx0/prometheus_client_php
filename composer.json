@@ -1,5 +1,5 @@
 {
-    "name": "endclothing/prometheus_client_php",
+    "name": "lEx0/prometheus_client_php",
     "description": "Prometheus instrumentation library for PHP applications.",
     "type": "library",
     "license": "Apache-2.0",
@@ -7,6 +7,10 @@
         {
             "name": "Daniel Noel-Davies",
             "email": "Daniel.Noel-Davies@endclothing.com"
+        },
+        {
+            "name": "Amangeldy Kadyl",
+            "email": "lex0.kz@gmail.com"
         }
     ],
     "replace": {
