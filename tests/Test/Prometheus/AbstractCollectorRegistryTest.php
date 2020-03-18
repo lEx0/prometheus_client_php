@@ -4,10 +4,8 @@ namespace Test\Prometheus;
 
 use PHPUnit\Framework\TestCase;
 use Prometheus\CollectorRegistry;
-use Prometheus\Histogram;
 use Prometheus\RenderTextFormat;
 use Prometheus\Storage\Adapter;
-use Prometheus\Storage\Redis;
 use Prometheus\Exception\MetricsRegistrationException;
 use Prometheus\Exception\MetricNotFoundException;
 
@@ -23,7 +21,7 @@ abstract class AbstractCollectorRegistryTest extends TestCase
      */
     private $renderer;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->configureAdapter();
         $this->renderer = new RenderTextFormat();
