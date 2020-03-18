@@ -3,6 +3,7 @@
 namespace Test\Prometheus;
 
 use InvalidArgumentException;
+use PHPUnit\Framework\Constraint\IsType;
 use PHPUnit\Framework\TestCase;
 use Prometheus\Histogram;
 use Prometheus\MetricFamilySamples;
@@ -19,12 +20,27 @@ abstract class AbstractHistogramTest extends TestCase
      */
     public $adapter;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->configureAdapter();
     }
 
     abstract public function configureAdapter();
+
+    /**
+     * this function is missing in the phpunit 6.5
+     *
+     * @param        $actual
+     * @param string $message
+     */
+    public function assertIsArray($actual, string $message = '')
+    {
+        static::assertThat(
+            $actual,
+            new IsType(IsType::TYPE_ARRAY),
+            $message
+        );
+    }
 
     /**
      * @test
